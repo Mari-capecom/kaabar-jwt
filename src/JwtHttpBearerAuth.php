@@ -84,7 +84,7 @@ class JwtHttpBearerAuth extends AuthMethod
             if ($this->auth) {
                 $identity = call_user_func($this->auth, $token, get_class($this));
             } else {
-                $identity = $user->loginByAccessToken($matches[1], get_class($this));
+                $identity = $user->loginByAccessToken($token, get_class($this));
             }
 
             return $identity;
